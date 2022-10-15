@@ -3,7 +3,12 @@ import java.util.List;
 
 interface StringChecker { boolean checkString(String s); }
 
-class ListExamples {
+public class ListExamples implements StringChecker {
+
+  @Override
+  public boolean checkString(String s){
+    return s.contains("d");
+  }
 
   // Returns a new list that has all the elements of the input list for which
   // the StringChecker returns true, and not the elements that return false, in
@@ -17,7 +22,6 @@ class ListExamples {
     }
     return result;
   }
-
 
   // Takes two sorted list of strings (so "a" appears before "b" and so on),
   // and return a new list that has all the strings in both list in sorted order.
